@@ -4,11 +4,14 @@ import { ThemeProvider } from 'styled-components';
 
 import GlobalStyles from './styles/global';
 import theme from './styles/theme';
+import Header from './components/Header';
+import Gradient from './components/Header/Gradient';
 
 const App: React.FC = () => {
   return (
     <ThemeProvider theme={theme}>
-      <h1>Hello</h1>
+      <Header />
+      <Gradient />
       <GlobalStyles />
     </ThemeProvider>
   );

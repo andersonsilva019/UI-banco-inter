@@ -14,9 +14,9 @@ export default {
     yellow: '#FFED00',
   },
   fontSizes: {
-    default: '1.4rem',
-    huge: '1.6rem',
     small: '1.2rem',
+    default: '1.4rem',
+    large: '1.6rem',
     tiny: '1rem',
   },
   spacing: {
