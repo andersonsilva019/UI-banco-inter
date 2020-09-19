@@ -23,6 +23,7 @@ export const Container = styled.button<IPropsContainer>`
   border: 0;
   background: ${({ theme }) => theme.colors.background};
   color: ${({ theme }) => theme.colors.secondary};
+  color: ${({ theme }) => theme.colors.secondary};
 
   ${({ variant }) => variant && variants[variant]}; /* variants.secondary */
 `;
