@@ -15,15 +15,20 @@ const variants = {
 };
 
 export const Container = styled.button<IPropsContainer>`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0.8rem 2.4rem;
-  border-radius: 0.4rem;
-  border: 0;
-  background: ${({ theme }) => theme.colors.background};
-  color: ${({ theme }) => theme.colors.secondary};
-  color: ${({ theme }) => theme.colors.secondary};
+  ${({ theme, variant }) => css`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.8rem 2.4rem;
+    border-radius: 0.4rem;
+    border: 0;
+    background: ${theme.colors.background};
+    color: ${theme.colors.secondary};
+    transition: ${theme.transition.default};
+    ${variant && variants[variant]}; /* variants.secondary */
 
-  ${({ variant }) => variant && variants[variant]}; /* variants.secondary */
+    /* &:hover {
+      transform: scale(1.5);
+    } */
+  `}
 `;

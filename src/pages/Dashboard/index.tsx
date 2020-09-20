@@ -1,14 +1,17 @@
 import React from 'react';
 
 import Header from '../../components/Header';
-import { Container } from './styles';
+import { Container, Wrapper } from './styles';
+import Sidebar from './Sidebar';
 
 const Dashboard: React.FC = () => {
   return (
     <>
       <Header />
       <Container>
-        <div>Dashboad</div>
+        <Wrapper>
+          <Sidebar />
+        </Wrapper>
       </Container>
     </>
   );
