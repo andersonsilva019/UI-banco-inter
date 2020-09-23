@@ -4,6 +4,7 @@ import { Container, Wrapper, LeftNav, RightNav } from './styles';
 import { BancoInterLogo } from '../../assets/images';
 import Button from '../Button';
 import AccountDropdown from './AccountDropdown';
+import Gradient from './Gradient';
 
 interface User {
   id: number;
@@ -29,6 +30,7 @@ const Header: React.FC = () => {
           <AccountDropdown user={user} />
         </RightNav>
       </Wrapper>
+      <Gradient />
     </Container>
   );
 };
