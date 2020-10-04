@@ -63,9 +63,11 @@ export const DataWrapper = styled.div`
 
 export const LeftData = styled.div`
   ${({ theme }) => css`
-    margin-right: 0.8rem;
     max-width: 55%;
+    margin-right: 0.8rem;
     width: 100%;
+    max-height: 9.6rem;
+    height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -73,6 +75,12 @@ export const LeftData = styled.div`
     > img {
       height: 8.4rem;
       width: auto;
+    }
+
+    /* Texto do gráfico */
+    svg text {
+      font-size: ${theme.fontSizes.tiny} !important;
+      fill: ${theme.colors.grey} !important;
     }
   `}
 `;
@@ -107,5 +115,30 @@ const getDataColor = ({ theme, income, outcome }: IGetDataColor): string => {
 export const DataValue = styled.div<Omit<IGetDataColor, 'theme'>>`
   ${({ theme, income, outcome }) => css`
     color: ${getDataColor({ theme, income, outcome })};
+  `}
+`;
+
+export const CustomTooltip = styled.div`
+  ${({ theme }) => css`
+    background: ${theme.colors.lightGrey};
+    padding: 0.4rem 0.8rem;
+    border-radius: ${theme.radius.small};
+    font-size: ${theme.fontSizes.tiny};
+    text-align: center;
+    box-shadow: 0 -0.1rem 0.1rem rgba(0, 0, 0, 0.28);
+
+    :before {
+      bottom: -1.6rem;
+      content: '';
+      display: block;
+      height: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      position: absolute;
+      border-color: ${theme.colors.lightGrey} transparent transparent
+        transparent;
+      border-style: solid;
+      border-width: 0.8rem;
+    }
   `}
 `;
