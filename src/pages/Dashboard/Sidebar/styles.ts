@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import { opacify, transparentize } from 'polished';
+import { transparentize } from 'polished';
 
 import Button from '../../../components/Button';
 
