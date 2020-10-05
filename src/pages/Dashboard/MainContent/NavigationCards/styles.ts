@@ -47,7 +47,7 @@ export const Cards = styled(Button)`
     color: ${theme.colors.grey};
     border-radius: ${theme.radius.default};
     padding: 1.6rem;
-    box-shadow: ${theme.shadows.default};
+    box-shadow: ${theme.shadows.flat};
     font-size: ${theme.fontSizes.default};
 
     div {

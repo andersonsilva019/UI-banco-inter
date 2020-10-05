@@ -51,50 +51,54 @@ const AccountSummary: React.FC = () => {
         </Header>
         <DataWrapper>
           <LeftData>
-            <ResponsiveBar
-              data={dataBar}
-              keys={['outcome', 'income']}
-              indexBy="month"
-              margin={{ top: 0, right: -8, bottom: 20, left: -8 }}
-              padding={0.6}
-              borderRadius={2}
-              colors={({ id, data }) => data[`${id}Color`]}
-              borderColor={{ from: 'color', modifiers: [['darker', 1.6]] }}
-              axisTop={null}
-              axisRight={null}
-              axisLeft={null}
-              axisBottom={{
-                tickSize: 0,
-                tickPadding: 8,
-                tickRotation: 0,
-              }}
-              tooltip={chart => {
-                const label = chart.id === 'income' ? 'Receita' : 'Despesas';
-                const value = chart.data[chart.id];
-                return <CustomTooltip>{`${label}: R$${value}`}</CustomTooltip>;
-              }}
-              theme={{
-                tooltip: {
-                  container: {
-                    background: 'none',
-                    boxShadow: 'none',
-                    padding: 0,
-                    borderRadius: 0,
+            {displayStatement ? (
+              <ResponsiveBar
+                data={dataBar}
+                keys={['outcome', 'income']}
+                indexBy="month"
+                margin={{ top: 0, right: -8, bottom: 20, left: -8 }}
+                padding={0.6}
+                borderRadius={2}
+                colors={({ id, data }) => data[`${id}Color`]}
+                borderColor={{ from: 'color', modifiers: [['darker', 1.6]] }}
+                axisTop={null}
+                axisRight={null}
+                axisLeft={null}
+                axisBottom={{
+                  tickSize: 0,
+                  tickPadding: 8,
+                  tickRotation: 0,
+                }}
+                tooltip={chart => {
+                  const label = chart.id === 'income' ? 'Receita' : 'Despesas';
+                  const value = chart.data[chart.id];
+                  return (
+                    <CustomTooltip>{`${label}: R$${value}`}</CustomTooltip>
+                  );
+                }}
+                theme={{
+                  tooltip: {
+                    container: {
+                      background: 'none',
+                      boxShadow: 'none',
+                      padding: 0,
+                      borderRadius: 0,
+                    },
+                    chip: {
+                      margin: 0,
+                    },
+                    tableCell: {
+                      padding: 0,
+                    },
                   },
-                  chip: {
-                    margin: 0,
-                  },
-                  tableCell: {
-                    padding: 0,
-                  },
-                },
-              }}
-              animate
-              motionStiffness={90}
-              motionDamping={15}
-              enableGridY={false}
-              enableLabel={false}
-            />
+                }}
+                animate
+                motionStiffness={90}
+                motionDamping={15}
+                enableGridY={false}
+                enableLabel={false}
+              />
+            ) : null}
           </LeftData>
           <RightData>
             <span>Receita</span>
@@ -135,46 +139,48 @@ const AccountSummary: React.FC = () => {
         </Header>
         <DataWrapper>
           <LeftData>
-            <ResponsiveLine
-              data={dataLine}
-              enableArea
-              enableGridY={false}
-              curve="cardinal"
-              margin={{ top: 8, right: 8, bottom: 20, left: 8 }}
-              xScale={{ type: 'point' }}
-              yScale={{
-                type: 'linear',
-                min: 'auto',
-                max: 'auto',
-                stacked: true,
-                reverse: false,
-              }}
-              tooltip={({ point }) => {
-                return (
-                  <CustomTooltip>
-                    {formatChartData(point.data.yFormatted)}
-                  </CustomTooltip>
-                );
-              }}
-              axisTop={null}
-              axisRight={null}
-              axisBottom={{
-                orient: 'bottom',
-                tickSize: 0,
-                tickPadding: 5,
-                tickRotation: 0,
-              }}
-              axisLeft={null}
-              colors={colors.success}
-              enableCrosshair={false}
-              pointSize={8}
-              lineWidth={1.5}
-              pointColor={colors.success}
-              pointBorderColor={{ from: 'serieColor' }}
-              pointLabel="y"
-              pointLabelYOffset={-12}
-              useMesh
-            />
+            {displayInvestments ? (
+              <ResponsiveLine
+                data={dataLine}
+                enableArea
+                enableGridY={false}
+                curve="cardinal"
+                margin={{ top: 8, right: 8, bottom: 20, left: 8 }}
+                xScale={{ type: 'point' }}
+                yScale={{
+                  type: 'linear',
+                  min: 'auto',
+                  max: 'auto',
+                  stacked: true,
+                  reverse: false,
+                }}
+                tooltip={({ point }) => {
+                  return (
+                    <CustomTooltip>
+                      {formatChartData(point.data.yFormatted)}
+                    </CustomTooltip>
+                  );
+                }}
+                axisTop={null}
+                axisRight={null}
+                axisBottom={{
+                  orient: 'bottom',
+                  tickSize: 0,
+                  tickPadding: 5,
+                  tickRotation: 0,
+                }}
+                axisLeft={null}
+                colors={colors.success}
+                enableCrosshair={false}
+                pointSize={8}
+                lineWidth={1.5}
+                pointColor={colors.success}
+                pointBorderColor={{ from: 'serieColor' }}
+                pointLabel="y"
+                pointLabelYOffset={-12}
+                useMesh
+              />
+            ) : null}
           </LeftData>
           <RightData>
             <span>Total investido</span>
