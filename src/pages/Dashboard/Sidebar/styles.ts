@@ -3,10 +3,16 @@ import { opacify, transparentize } from 'polished';
 
 import Button from '../../../components/Button';
 
+export const Wrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  flex: 1 100%;
+  max-width: 26.4rem;
+`;
+
 export const Container = styled.div`
   ${({ theme }) => css`
     background: ${theme.colors.background};
-    max-width: 26.4rem;
     max-height: 60rem;
     width: 100%;
     height: 100%;
