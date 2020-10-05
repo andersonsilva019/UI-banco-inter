@@ -10,6 +10,7 @@ export const Container = styled.footer`
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-top: 2.4rem;
   `}
 `;
 
@@ -42,6 +43,7 @@ export const FooterSection = styled(Container)<{ background?: string }>`
   ${({ theme, background }) => css`
     background: ${background || transparentize(0.92, theme.colors.grey)};
     display: flex;
+    margin-top: 0;
 
     :last-of-type {
       ${Wrapper} {
