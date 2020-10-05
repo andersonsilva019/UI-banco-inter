@@ -2,6 +2,8 @@ import styled, { css } from 'styled-components';
 
 interface IPropsContainer {
   variant?: 'secondary' | 'transparent';
+  color?: string;
+  background?: string;
 }
 
 const variants = {
@@ -15,15 +17,15 @@ const variants = {
 };
 
 export const Container = styled.button<IPropsContainer>`
-  ${({ theme, variant }) => css`
+  ${({ theme, variant, color, background }) => css`
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 0.8rem 2.4rem;
     border-radius: 0.4rem;
     border: 0;
-    background: ${theme.colors.background};
-    color: ${theme.colors.secondary};
+    background: ${background || theme.colors.background};
+    color: ${color || theme.colors.secondary};
     transition: ${theme.transition.default};
     ${variant && variants[variant]}; /* variants.secondary */
 
