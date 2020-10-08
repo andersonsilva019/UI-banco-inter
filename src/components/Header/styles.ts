@@ -26,7 +26,9 @@ export const LeftNav = styled(motion.div)`
   font-weight: 700;
 
   > svg {
-    margin-right: 2.4rem;
+    margin: 0 2.4rem 0.8rem 0;
+    height: 100%;
+    max-width: 11.2rem;
   }
 `;
 
