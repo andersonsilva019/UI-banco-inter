@@ -1,10 +1,11 @@
 import styled, { css } from 'styled-components';
+import { motion } from 'framer-motion';
 
 import ButtonBackground from '../../../../assets/images/backgroundButton.svg';
 import { Navigation, Cards } from '../NavigationCards/styles';
 import { Container as ButtonContainer } from '../../../../components/Button/styles';
 
-export const Container = styled.div`
+export const Container = styled(motion.div)`
   ${({ theme }) => css`
     background: ${theme.colors.background};
     border-radius: ${theme.radius.default};

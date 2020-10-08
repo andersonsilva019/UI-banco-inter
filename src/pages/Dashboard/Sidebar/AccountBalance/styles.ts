@@ -40,17 +40,11 @@ export const Balance = styled.div`
   ${({ theme }) => css`
     flex: 1;
     position: relative;
+
     > span {
       font-size: ${theme.fontSizes.small};
       display: block;
-
-      :last-child {
-        max-width: 8rem;
-        margin: 0.2rem 0;
-        height: 2rem;
-        background: ${theme.colors.grey}b3; /* b3 = Opacidade */
-        border-radius: ${theme.radius.tiny};
-      }
+      transform-origin: left;
     }
     > div {
       position: relative;

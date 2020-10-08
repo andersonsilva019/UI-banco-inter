@@ -3,7 +3,7 @@ import React, { ButtonHTMLAttributes } from 'react';
 import { Container } from './styles';
 
 export type IButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
-  variant?: 'secondary' | 'transparent';
+  revision?: 'secondary' | 'transparent';
   background?: string;
   color?: string;
 };
@@ -11,11 +11,11 @@ export type IButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
 const Button: React.FC<IButtonProps> = ({
   children,
   type,
-  variant,
+  revision,
   ...rest
 }) => {
   return (
-    <Container type={type || 'button'} {...rest} variant={variant}>
+    <Container type={type || 'button'} {...rest} revision={revision}>
       {children}
     </Container>
   );

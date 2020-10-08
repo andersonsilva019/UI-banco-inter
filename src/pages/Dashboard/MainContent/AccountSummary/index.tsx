@@ -19,10 +19,29 @@ import {
   CustomTooltip,
 } from './styles';
 import Button from '../../../../components/Button';
+import { DEFAULT_TRANSITION } from '../../../../constants';
 
 type ChartValue = number | React.ReactText;
 
 const formatChartData = (number: ChartValue): string => `${number || 0}%`;
+
+const containerAnimation = {
+  unMounted: { opacity: 0, y: -50 },
+  mounted: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      when: 'beforeChildren',
+      staggerChildren: 0.5,
+      delay: 0.5,
+    },
+  },
+};
+
+const cardsAnimation = {
+  unMounted: { opacity: 0, y: -25 },
+  mounted: { opacity: 1, y: 0 },
+};
 
 const AccountSummary: React.FC = () => {
   const [displayStatement, setDisplayStatement] = useState(true);
@@ -37,14 +56,19 @@ const AccountSummary: React.FC = () => {
   const { colors } = useTheme();
 
   return (
-    <Container>
-      <Card>
+    <Container variants={containerAnimation}>
+      <Card
+        layout
+        key="statments"
+        variants={cardsAnimation}
+        transition={DEFAULT_TRANSITION}
+      >
         <Header iconStroke>
           <FiFileText />
           <h3>Extrato</h3>
           <Button
             onClick={() => setDisplayStatement(prevState => !prevState)}
-            variant="transparent"
+            revision="transparent"
           >
             {displayStatement ? <FiEyeOff /> : <FiEye />}
           </Button>
@@ -112,7 +136,12 @@ const AccountSummary: React.FC = () => {
           </RightData>
         </DataWrapper>
       </Card>
-      <Card>
+      <Card
+        layout
+        key="credit-card"
+        variants={cardsAnimation}
+        transition={DEFAULT_TRANSITION}
+      >
         <Header iconStroke>
           <FiCreditCard />
           <h3>MasterCard 8430</h3>
@@ -126,13 +155,18 @@ const AccountSummary: React.FC = () => {
           </RightData>
         </DataWrapper>
       </Card>
-      <Card>
+      <Card
+        layout
+        key="investments"
+        variants={cardsAnimation}
+        transition={DEFAULT_TRANSITION}
+      >
         <Header iconStroke={false}>
           <PlataformaPaiIcon />
           <h3>Plataforma Aberta Inter</h3>
           <Button
             onClick={() => setDisplayInvestments(prevState => !prevState)}
-            variant="transparent"
+            revision="transparent"
           >
             {displayInvestments ? <FiEyeOff /> : <FiEye />}
           </Button>

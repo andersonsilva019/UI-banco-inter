@@ -1,30 +1,32 @@
 import React, { useState } from 'react';
 
+import { motion, AnimatePresence } from 'framer-motion';
 import { FiEye, FiEyeOff } from 'react-icons/fi';
 
 import { Container, Balance } from './styles';
 import Button from '../../../../components/Button';
+import BalanceSecrets from './BalanceSecrets';
 
 const AccountBalance: React.FC = () => {
-  const [isVisible, setIsVisible] = useState(false);
+  const [isHidden, setIsHidden] = useState(true);
+  const [isValueVisible, setIsVisible] = useState(false);
 
   return (
     <Container>
       <Balance>
         <span>Saldo em conta:</span>
-        {isVisible ? (
-          <>
-            R$ <strong>1234,00</strong>
-          </>
-        ) : (
-          <span />
-        )}
+        <AnimatePresence>
+          {isHidden && <BalanceSecrets setIsValueVisible={setIsVisible} />}
+        </AnimatePresence>
+        <div>
+          R$ <strong>{isValueVisible ? '1234,00' : '---'}</strong>
+        </div>
       </Balance>
       <Button
-        variant="transparent"
-        onClick={() => setIsVisible(prevState => !prevState)}
+        revision="transparent"
+        onClick={() => setIsHidden(prevState => !prevState)}
       >
-        {isVisible ? <FiEyeOff /> : <FiEye />}
+        {isHidden ? <FiEyeOff /> : <FiEye />}
       </Button>
     </Container>
   );
