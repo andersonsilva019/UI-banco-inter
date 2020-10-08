@@ -46,7 +46,6 @@ const Header: React.FC = () => {
       >
         <LeftNav variants={navNavigation}>
           <BancoInterLogo />
-          Internet Backing
         </LeftNav>
         <RightNav variants={navNavigation}>
           <Button revision="secondary">Simular renda fixa</Button>
