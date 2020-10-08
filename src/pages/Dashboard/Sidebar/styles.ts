@@ -1,5 +1,6 @@
 import styled, { css } from 'styled-components';
 import { transparentize } from 'polished';
+import { motion } from 'framer-motion';
 
 import Button from '../../../components/Button';
 
@@ -10,7 +11,7 @@ export const Wrapper = styled.div`
   max-width: 26.4rem;
 `;
 
-export const Container = styled.div`
+export const Container = styled(motion.section)`
   ${({ theme }) => css`
     background: ${theme.colors.background};
     max-height: 60rem;

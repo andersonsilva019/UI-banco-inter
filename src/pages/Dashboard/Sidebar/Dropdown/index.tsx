@@ -11,7 +11,7 @@ interface DropdownProps {
 
 const Dropdown: React.FC<DropdownProps> = ({ icon, sectionName }) => {
   return (
-    <Container variant="transparent">
+    <Container revision="transparent">
       <div>{icon}</div>
       {sectionName}
       <FiChevronDown />
