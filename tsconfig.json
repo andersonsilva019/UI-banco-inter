@@ -17,10 +17,17 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "react"
+    "jsx": "react",
+    /* Root import */
+    "baseUrl": ".",
+    "paths": {
+      "~/*": ["src/*"]
+    }
   },
   "include": [
     "src"
   ],
-  "files": ["src/styles/styled.d.ts"]
+  "files": [
+    "src/styles/styled.d.ts"
+  ]
 }
