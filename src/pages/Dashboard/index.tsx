@@ -1,10 +1,11 @@
 import React from 'react';
 
-import Header from '../../components/Header';
 import { Container, Wrapper } from './styles';
 import Sidebar from './Sidebar';
 import MainContent from './MainContent';
-import Footer from '../../components/Footer';
+
+import Header from '~/components/Header';
+import Footer from '~/components/Footer';
 
 const animation = {
   unMounted: { opacity: 0 },

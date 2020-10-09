@@ -2,8 +2,9 @@ import React from 'react';
 
 import { useTheme } from 'styled-components';
 
-import { NortonImage } from '../../assets/images';
 import { Container, FooterSection, Wrapper } from './styles';
+
+import { NortonImage } from '~/assets/images';
 
 const Footer: React.FC = () => {
   const { colors } = useTheme();

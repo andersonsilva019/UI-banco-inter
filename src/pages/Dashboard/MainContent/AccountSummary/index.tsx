@@ -5,9 +5,6 @@ import { ResponsiveLine } from '@nivo/line';
 import { ResponsiveBar } from '@nivo/bar';
 import { useTheme } from 'styled-components';
 
-import { PlataformaPaiIcon } from '../../../../assets/icons';
-import { IlustratorImage } from '../../../../assets/images';
-import { dataLine, dataBar } from '../../../../resources';
 import {
   Container,
   Card,
@@ -18,8 +15,12 @@ import {
   DataValue,
   CustomTooltip,
 } from './styles';
-import Button from '../../../../components/Button';
-import { DEFAULT_TRANSITION } from '../../../../constants';
+
+import Button from '~/components/Button';
+import { DEFAULT_TRANSITION } from '~/constants';
+import { PlataformaPaiIcon } from '~/assets/icons';
+import { IlustratorImage } from '~/assets/images';
+import { dataLine, dataBar } from '~/resources';
 
 type ChartValue = number | React.ReactText;
 

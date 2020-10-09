@@ -1,11 +1,12 @@
 import React, { memo } from 'react';
 
 import { Container, Wrapper, LeftNav, RightNav } from './styles';
-import { BancoInterLogo } from '../../assets/images';
 import Button from '../Button';
 import AccountDropdown from './AccountDropdown';
 import Gradient from './Gradient';
-import { DEFAULT_TRANSITION } from '../../constants';
+
+import { BancoInterLogo } from '~/assets/images';
+import { DEFAULT_TRANSITION } from '~/constants';
 
 interface User {
   id: number;

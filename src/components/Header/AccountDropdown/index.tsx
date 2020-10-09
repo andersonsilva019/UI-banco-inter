@@ -3,7 +3,8 @@ import React from 'react';
 import { useTheme } from 'styled-components';
 
 import { Container } from './styles';
-import { removeHashFromColor } from '../../../utils/removeHashFromColor';
+
+import { removeHashFromColor } from '~/utils/removeHashFromColor';
 
 interface User {
   name: string;

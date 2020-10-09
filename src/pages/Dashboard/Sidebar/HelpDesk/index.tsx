@@ -4,7 +4,8 @@ import { FiImage, FiArrowRight } from 'react-icons/fi';
 import { useTheme } from 'styled-components';
 
 import { Container, HelpButton } from './styles';
-import { DEFAULT_TRANSITION } from '../../../../constants';
+
+import { DEFAULT_TRANSITION } from '~/constants';
 
 const animation = {
   unMounted: { x: -50, opacity: 0 },

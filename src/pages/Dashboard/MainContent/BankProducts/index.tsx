@@ -4,7 +4,6 @@ import { FiShoppingCart, FiArrowRight, FiChevronRight } from 'react-icons/fi';
 import { useTheme } from 'styled-components';
 import { darken } from 'polished';
 
-import Button from '../../../../components/Button';
 import {
   Container,
   ShoppingButton,
@@ -13,8 +12,10 @@ import {
   Products,
   ProductsCards,
 } from './styles';
-import { bankNavigation } from '../../../../resources';
-import { DEFAULT_TRANSITION } from '../../../../constants';
+
+import Button from '~/components/Button';
+import { bankNavigation } from '~/resources';
+import { DEFAULT_TRANSITION } from '~/constants';
 
 const animation = {
   unMounted: { opacity: 0, x: 50 },
