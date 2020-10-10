@@ -26,11 +26,15 @@ export const Container = styled.button<IPropsContainer>`
     border: 0;
     background: ${background || theme.colors.background};
     color: ${color || theme.colors.secondary};
-    transition: ${theme.transition.default};
     ${revision && revisions[revision]}; /* revisions.secondary */
 
-    /* &:hover {
-      transform: scale(1.5);
-    } */
+    * {
+      transition: ${theme.transition.default};
+    }
+
+    :disabled {
+      cursor: not-allowed;
+      opacity: 0.6;
+    }
   `}
 `;
