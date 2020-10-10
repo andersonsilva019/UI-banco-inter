@@ -3,15 +3,10 @@ import React from 'react';
 import { useTheme } from 'styled-components';
 
 import { Container } from './styles';
-
-import { removeHashFromColor } from '~/utils/removeHashFromColor';
-
-interface User {
-  name: string;
-}
+import { removeHashFromColor } from '../../../utils/removeHashFromColor';
 
 interface IAccountDropdownProps {
-  user: User;
+  user: string | undefined;
 }
 
 const AccountDropdown: React.FC<IAccountDropdownProps> = ({ user }) => {
@@ -22,7 +17,7 @@ const AccountDropdown: React.FC<IAccountDropdownProps> = ({ user }) => {
       <img
         src={`https://ui-avatars.com/api/?rounded=true&bold=true&format=svg&background=${removeHashFromColor(
           lightGrey,
-        )}&color=${removeHashFromColor(secondary)}&name=${user.name}`}
+        )}&color=${removeHashFromColor(secondary)}&name=${user}`}
         alt=""
       />
     </Container>

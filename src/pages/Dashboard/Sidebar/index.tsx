@@ -6,9 +6,8 @@ import { Wrapper, Container, AmountInvested } from './styles';
 import Dropdown from './Dropdown';
 import AccountBalance from './AccountBalance';
 import HelpDesk from './HelpDesk';
-
-import { sidebarNavigation } from '~/resources';
-import { DEFAULT_TRANSITION } from '~/constants';
+import { sidebarNavigation } from '../../../resources';
+import { DEFAULT_TRANSITION } from '../../../constants';
 
 const animation = {
   unMounted: { opacity: 0, y: -50 },

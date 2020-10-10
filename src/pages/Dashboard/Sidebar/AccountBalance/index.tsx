@@ -5,8 +5,7 @@ import { FiEye, FiEyeOff } from 'react-icons/fi';
 
 import { Container, Balance } from './styles';
 import BalanceSecrets from './BalanceSecrets';
-
-import Button from '~/components/Button';
+import Button from '../../../../components/Button';
 
 const AccountBalance: React.FC = () => {
   const [isHidden, setIsHidden] = useState(true);

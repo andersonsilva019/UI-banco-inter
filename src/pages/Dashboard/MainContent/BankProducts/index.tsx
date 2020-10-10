@@ -12,10 +12,9 @@ import {
   Products,
   ProductsCards,
 } from './styles';
-
-import Button from '~/components/Button';
-import { bankNavigation } from '~/resources';
-import { DEFAULT_TRANSITION } from '~/constants';
+import Button from '../../../../components/Button';
+import { bankNavigation } from '../../../../resources';
+import { DEFAULT_TRANSITION } from '../../../../constants';
 
 const animation = {
   unMounted: { opacity: 0, x: 50 },

@@ -4,9 +4,9 @@ import { Container, Wrapper, LeftNav, RightNav } from './styles';
 import Button from '../Button';
 import AccountDropdown from './AccountDropdown';
 import Gradient from './Gradient';
-
-import { BancoInterLogo } from '~/assets/images';
-import { DEFAULT_TRANSITION } from '~/constants';
+import { BancoInterLogo } from '../../assets/images';
+import { DEFAULT_TRANSITION } from '../../constants';
+import { useAuth } from '../../contexts/Auth';
 
 interface User {
   id: number;
@@ -37,7 +37,7 @@ const navNavigation = {
 };
 
 const Header: React.FC = () => {
-  const user: User = { id: 1, name: 'Anderson Silva', username: 'And321' };
+  const { user } = useAuth();
   return (
     <Container>
       <Wrapper

@@ -2,9 +2,8 @@ import styled, { css } from 'styled-components';
 import { motion } from 'framer-motion';
 
 import { Navigation, Cards } from '../NavigationCards/styles';
-
-import ButtonBackground from '~/assets/images/backgroundButton.svg';
-import { Container as ButtonContainer } from '~/components/Button/styles';
+import ButtonBackground from '../../../../assets/images/backgroundButton.svg';
+import { Container as ButtonContainer } from '../../../../components/Button/styles';
 
 export const Container = styled(motion.div)`
   ${({ theme }) => css`
