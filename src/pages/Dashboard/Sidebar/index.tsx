@@ -3,10 +3,10 @@ import React from 'react';
 import { FiBarChart2 } from 'react-icons/fi';
 
 import { Wrapper, Container, AmountInvested } from './styles';
-import { sidebarNavigation } from '../../../resources';
 import Dropdown from './Dropdown';
 import AccountBalance from './AccountBalance';
 import HelpDesk from './HelpDesk';
+import { sidebarNavigation } from '../../../resources';
 import { DEFAULT_TRANSITION } from '../../../constants';
 
 const animation = {

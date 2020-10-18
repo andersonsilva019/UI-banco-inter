@@ -27,8 +27,6 @@ export default createGlobalStyle`
     position: relative;
     display: flex;
     flex-direction: column;
-  }
-  #root {
     height: 100%;
   }
   body, input, button {
